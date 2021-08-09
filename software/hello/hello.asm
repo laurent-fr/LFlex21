@@ -58,7 +58,7 @@ RESET           ; start of code
 
 PROMPT
    
-   LDA #'?' ; prompt
+   LDA #'? ; prompt
 
 ECHOLOOP
         BSR OUTCH
@@ -85,12 +85,12 @@ OUTSTR  LDA ,X+
 OUTSTRE RTS 
 
 MSG 
-        FCC 27
+        FCB 27
         FCC /[2J/
         FCC /Hello, World!/
-        FCC 13
-        FCC 10
-        FCC 0
+        FCB 13
+        FCB 10
+        FCB 0
 
     ORG $FFFE
 

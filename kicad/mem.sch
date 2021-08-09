@@ -422,54 +422,6 @@ Wire Wire Line
 	8500 4650 8500 4750
 Wire Wire Line
 	8500 5050 8500 5150
-Text GLabel 6200 1950 0    50   UnSpc ~ 0
-A0
-Text GLabel 6200 2050 0    50   UnSpc ~ 0
-A1
-Text GLabel 6200 2150 0    50   UnSpc ~ 0
-A2
-Text GLabel 6200 2250 0    50   UnSpc ~ 0
-A3
-Text GLabel 6200 2350 0    50   UnSpc ~ 0
-A4
-Text GLabel 6200 2450 0    50   UnSpc ~ 0
-A5
-Text GLabel 6200 2550 0    50   UnSpc ~ 0
-A6
-Text GLabel 6200 2650 0    50   UnSpc ~ 0
-A7
-Text GLabel 6200 2750 0    50   UnSpc ~ 0
-A8
-Text GLabel 6200 2850 0    50   UnSpc ~ 0
-A9
-Text GLabel 6200 2950 0    50   UnSpc ~ 0
-A10
-Text GLabel 6200 3050 0    50   UnSpc ~ 0
-A11
-Text GLabel 6200 3150 0    50   UnSpc ~ 0
-A12
-Text GLabel 6200 3250 0    50   UnSpc ~ 0
-A13
-Text GLabel 6200 3350 0    50   UnSpc ~ 0
-A14
-Text GLabel 6200 3450 0    50   UnSpc ~ 0
-A15
-Text GLabel 7700 1950 2    50   UnSpc ~ 0
-D0
-Text GLabel 7700 2050 2    50   UnSpc ~ 0
-D1
-Text GLabel 7700 2150 2    50   UnSpc ~ 0
-D2
-Text GLabel 7700 2250 2    50   UnSpc ~ 0
-D3
-Text GLabel 7700 2350 2    50   UnSpc ~ 0
-D4
-Text GLabel 7700 2450 2    50   UnSpc ~ 0
-D5
-Text GLabel 7700 2550 2    50   UnSpc ~ 0
-D6
-Text GLabel 7700 2650 2    50   UnSpc ~ 0
-D7
 $Comp
 L mylib:MK48T12 U10
 U 1 1 60F390E4
