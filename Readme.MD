@@ -1,4 +1,4 @@
-== LFlex21, a single board 6809/Flex computer
+# LFlex21, a single board 6809/Flex computer
 
    * 6809 CPU
    * 58Kb RAM
