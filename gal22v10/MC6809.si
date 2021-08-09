@@ -1,0 +1,22 @@
+Name     mc6809;
+PartNo   00;
+Date     22/06/2021;
+Revision 01;
+Designer Engineer;
+Company  pc;
+Assembly None;
+Location ;
+
+
+ORDER: A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, CSIO, CSRAM, CSROM, CSRTC, E, RD, RW, WR; 
+
+
+VECTORS:
+0000000000****0*0*
+1111100111********
+0000010111****1*0*
+0000010111****0*0*
+1000010111****1*1*
+1111110111****0*1*
+0000001111****1*1*
+1111111111********

@@ -1,0 +1,44 @@
+CSIM(WM): CUPL Simulation Program
+Version 5.0a Serial# 
+Copyright (c) 1983, 1998 Logical Devices, Inc.
+CREATED Sat Jul 17 10:02:53 2021
+
+LISTING FOR SIMULATION FILE: MC6809.si
+
+   1: Name     mc6809;
+   2: PartNo   00;
+   3: Date     22/06/2021;
+   4: Revision 01;
+   5: Designer Engineer;
+   6: Company  pc;
+   7: Assembly None;
+   8: Location ;
+   9: 
+  10: 
+  11: ORDER: A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, CSIO, CSRAM, CSROM, CSRTC, E, RD, RW, WR; 
+  12: 
+  13: 
+
+===========================
+                 CCC       
+                CSSS       
+          AAAAAASRRR       
+      AAAA111111IAOT RRW   
+      6789012345OMMCEDWR   
+===========================
+0001: 0000000000HLHH0H0H
+0002: 1111100111HLHH*X*X
+                    ^ ^
+[0021sa] invalid test value:  *
+[0021sa] invalid test value:  *
+
+0003: 0000010111LHHH1H0L
+0004: 0000010111LHHH0H0H
+0005: 1000010111HHHL1L1H
+0006: 1111110111HHHL0H1H
+0007: 0000001111HHLH1L1H
+0008: 1111111111HHLH*X*X
+                    ^ ^
+[0021sa] invalid test value:  *
+[0021sa] invalid test value:  *
+

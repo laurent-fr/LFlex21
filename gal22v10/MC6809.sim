@@ -1,0 +1,63 @@
+%SIGNAL
+PIN   1 =  A6 
+PIN   2 =  A7 
+PIN   3 =  A8 
+PIN   4 =  A9 
+PIN   5 =  A10 
+PIN   6 =  A11 
+PIN   7 =  A12 
+PIN   8 =  A13 
+PIN   9 =  A14 
+PIN  10 =  A15 
+PIN  21 =  CSIO 
+PIN  23 =  CSRAM 
+PIN  22 =  CSROM 
+PIN  18 =  CSRTC 
+PIN  13 =  E 
+PIN  19 =  RD 
+PIN  11 =  RW 
+PIN  20 =  WR 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+CSIO =>
+    !A6 & !A7 & !A8 & !A9 & !A10 & A11 & !A12 & A13 & A14 & A15
+
+CSRAM =>
+    A12 & A13 & A14 & A15
+  # A11 & !A12 & A13 & A14 & A15
+
+CSROM =>
+    A12 & A13 & A14 & A15
+
+CSRTC =>
+    A11 & !A12 & A13 & A15 & CSIO
+
+RD =>
+    E & RW
+
+WR =>
+    E & !RW
+
+CSIO.oe  =>
+    1 
+
+CSRAM.oe  =>
+    1 
+
+CSROM.oe  =>
+    1 
+
+CSRTC.oe  =>
+    1 
+
+RD.oe  =>
+    1 
+
+WR.oe  =>
+    1 
+
+%END
