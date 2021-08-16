@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 6
+Sheet 4 7
 Title ""
 Date ""
 Rev ""
@@ -428,7 +428,7 @@ U 1 1 60F390E4
 P 2300 2850
 F 0 "U10" H 2450 4100 50  0000 C CNN
 F 1 "MK48T12" H 2600 4000 50  0000 C CNN
-F 2 "" H 2300 2850 50  0001 C CNN
+F 2 "Housings_DIP:DIP-24_W15.24mm_LongPads" H 2300 2850 50  0001 C CNN
 F 3 "" H 2300 2850 50  0001 C CNN
 	1    2300 2850
 	1    0    0    -1  
@@ -749,7 +749,7 @@ Text GLabel 2550 7300 2    50   UnSpc ~ 0
 Text Label 2250 7450 0    50   ~ 0
 ~CSRTC~
 Text GLabel 2550 6700 2    50   UnSpc ~ 0
-~WR~
+~CSRAM~
 Text GLabel 2550 6850 2    50   UnSpc ~ 0
 ~CSROM~
 Text GLabel 2550 7450 2    50   UnSpc ~ 0

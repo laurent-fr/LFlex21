@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -43,5 +43,11 @@ S 8600 1700 1100 850
 U 60F7B347
 F0 "floppy" 50
 F1 "floppy.sch" 50
+$EndSheet
+$Sheet
+S 1600 3000 1250 850 
+U 612261E0
+F0 "ext" 50
+F1 "ext.sch" 50
 $EndSheet
 $EndSCHEMATC

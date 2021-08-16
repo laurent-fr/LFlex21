@@ -4,7 +4,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 6
+Sheet 3 7
 Title ""
 Date ""
 Rev ""
@@ -20,7 +20,7 @@ U 1 1 60D4D102
 P 8350 2900
 F 0 "U7" H 8500 4100 50  0000 C CNN
 F 1 "MAX202" H 8600 4000 50  0000 C CNN
-F 2 "Housings_DIP:DIP-8_W7.62mm_LongPads" H 8400 1850 50  0001 L CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm_LongPads" H 8400 1850 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/max202.pdf" H 8350 3000 50  0001 C CNN
 	1    8350 2900
 	1    0    0    -1  
@@ -31,7 +31,7 @@ U 1 1 60D5308C
 P 2500 3200
 F 0 "U5" H 2650 4700 50  0000 C CNN
 F 1 "MC6840_PTM" H 2850 4600 50  0000 C CNN
-F 2 "Housings_DIP:DIP-28_W15.24mm_Socket_LongPads" H 2550 1850 50  0001 L CNN
+F 2 "Housings_DIP:DIP-28_W15.24mm_LongPads" H 2550 1850 50  0001 L CNN
 F 3 "http://pdf.datasheetcatalog.com/datasheet/motorola/MC6840.pdf" H 2500 3200 50  0001 C CNN
 	1    2500 3200
 	1    0    0    -1  
@@ -42,7 +42,7 @@ U 1 1 60D56C03
 P 5500 3100
 F 0 "U6" H 5650 4500 50  0000 C CNN
 F 1 "MC6850_ACIA" H 5850 4400 50  0000 C CNN
-F 2 "Housings_DIP:DIP-24_W15.24mm_Socket_LongPads" H 5550 1950 50  0001 L CNN
+F 2 "Housings_DIP:DIP-24_W15.24mm_LongPads" H 5550 1950 50  0001 L CNN
 F 3 "http://pdf.datasheetcatalog.com/datasheet/motorola/MC6850.pdf" H 5500 3100 50  0001 C CNN
 	1    5500 3100
 	1    0    0    -1  
@@ -103,29 +103,8 @@ Wire Wire Line
 	4850 3950 4850 4050
 Wire Wire Line
 	4850 4050 5000 4050
-Wire Wire Line
-	3000 3100 3550 3100
-Wire Wire Line
-	3550 3100 3550 3950
 Connection ~ 4850 3950
-$Comp
-L Switch:SW_DIP_x01 SW3
-U 1 1 60D5FF5A
-P 3400 2550
-F 0 "SW3" H 3400 2817 50  0000 C CNN
-F 1 "SW_DIP_x01" H 3400 2726 50  0000 C CNN
-F 2 "" H 3400 2550 50  0001 C CNN
-F 3 "~" H 3400 2550 50  0001 C CNN
-	1    3400 2550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3550 3950 4850 3950
-Wire Wire Line
-	3000 2550 3100 2550
-Wire Wire Line
-	3700 2550 4000 2550
-Text Label 3800 2550 0    50   ~ 0
+Text Label 3250 6100 1    50   ~ 0
 ~NMI~
 $Comp
 L Device:CP C11
@@ -411,39 +390,7 @@ Wire Wire Line
 	4650 3400 5000 3400
 Text Label 4650 3400 0    50   ~ 0
 ~CSACIA~
-$Comp
-L Switch:SW_DIP_x01 SW2
-U 1 1 60D93CEE
-P 1400 4000
-F 0 "SW2" H 1400 4267 50  0000 C CNN
-F 1 "SW_DIP_x01" H 1400 4176 50  0000 C CNN
-F 2 "" H 1400 4000 50  0001 C CNN
-F 3 "~" H 1400 4000 50  0001 C CNN
-	1    1400 4000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Switch:SW_DIP_x01 SW4
-U 1 1 60D943F4
-P 4450 3800
-F 0 "SW4" H 4450 4067 50  0000 C CNN
-F 1 "SW_DIP_x01" H 4450 3976 50  0000 C CNN
-F 2 "" H 4450 3800 50  0001 C CNN
-F 3 "~" H 4450 3800 50  0001 C CNN
-	1    4450 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5000 3800 4750 3800
-Wire Wire Line
-	4150 3800 3800 3800
-Wire Wire Line
-	2000 4000 1700 4000
-Wire Wire Line
-	1100 4000 750  4000
-Text Label 3900 3800 0    50   ~ 0
-~IRQ~
-Text Label 850  4000 0    50   ~ 0
+Text Label 3350 6100 1    50   ~ 0
 ~IRQ~
 Text Label 4800 3600 0    50   ~ 0
 E
@@ -582,7 +529,7 @@ U 1 1 60E09EAE
 P 10600 3500
 F 0 "J2" H 10518 2808 50  0000 C CNN
 F 1 "DB9_Male" H 10518 2899 50  0000 C CNN
-F 2 "" H 10600 3500 50  0001 C CNN
+F 2 "Connectors_DSub:DSUB-9_Male_Horizontal_Pitch2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm" H 10600 3500 50  0001 C CNN
 F 3 " ~" H 10600 3500 50  0001 C CNN
 	1    10600 3500
 	1    0    0    1   
@@ -746,4 +693,74 @@ Wire Wire Line
 	2300 6600 2600 6600
 Wire Wire Line
 	2300 6750 2600 6750
+$Comp
+L Switch:SW_DIP_x04 SW2
+U 1 1 612A0C8C
+P 3350 5450
+F 0 "SW2" V 3304 5220 50  0000 R CNN
+F 1 "SW_DIP_x04" V 3395 5220 50  0000 R CNN
+F 2 "Buttons_Switches_THT:SW_DIP_x4_W7.62mm_Slide" H 3350 5450 50  0001 C CNN
+F 3 "~" H 3350 5450 50  0001 C CNN
+	1    3350 5450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	1550 4000 1550 5050
+Wire Wire Line
+	1550 4000 2000 4000
+Wire Wire Line
+	3950 3100 3950 3950
+Wire Wire Line
+	3950 3950 4850 3950
+Wire Wire Line
+	3000 3100 3950 3100
+Wire Wire Line
+	3250 5750 3250 6100
+Wire Wire Line
+	3350 5750 3350 5850
+Wire Wire Line
+	3450 5750 3450 5850
+Wire Wire Line
+	3450 5850 3350 5850
+Connection ~ 3350 5850
+Wire Wire Line
+	3350 5850 3350 6100
+Wire Wire Line
+	1550 5050 3350 5050
+Wire Wire Line
+	3350 5050 3350 5150
+Wire Wire Line
+	3000 2550 3450 2550
+Wire Wire Line
+	3450 2550 3450 3800
+Wire Wire Line
+	3250 3800 3250 5150
+Wire Wire Line
+	3450 3800 3450 5150
+Wire Wire Line
+	3250 3800 5000 3800
+$Comp
+L Connector:TestPoint TP3
+U 1 1 6169D384
+P 3950 3000
+F 0 "TP3" H 4008 3118 50  0000 L CNN
+F 1 "Acia_Clk" H 4008 3027 50  0000 L CNN
+F 2 "Connectors:Pin_d1.0mm_L10.0mm" H 4150 3000 50  0001 C CNN
+F 3 "~" H 4150 3000 50  0001 C CNN
+	1    3950 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3000 3950 3100
+Connection ~ 3950 3100
+Text Label 2100 7000 0    50   ~ 0
+PSW1
+Text GLabel 2650 7000 2    50   UnSpc ~ 0
+PSW1
+Wire Wire Line
+	2650 7000 2100 7000
+Wire Wire Line
+	3150 5150 3150 4700
+Text Label 3150 4950 1    50   ~ 0
+PSW1
 $EndSCHEMATC
