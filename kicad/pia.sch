@@ -363,8 +363,6 @@ F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 7200 1850 50  0001 C CNN
 	4    7200 1850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6150 1850 6900 1850
 $Comp
 L Device:LED D1
 U 1 1 60EDC6AE
@@ -585,10 +583,6 @@ Text Label 4700 1600 0    50   ~ 0
 PSIDESELECT
 Text Label 4700 1700 0    50   ~ 0
 PDDEN
-Wire Wire Line
-	4600 2400 6150 2400
-Wire Wire Line
-	6150 2400 6150 1850
 Text GLabel 1000 5650 2    50   UnSpc ~ 0
 D0
 Text GLabel 1000 5750 2    50   UnSpc ~ 0
@@ -725,8 +719,8 @@ $Comp
 L Device:R R2
 U 1 1 61759AE5
 P 5300 2000
-F 0 "R2" V 5093 2000 50  0000 C CNN
-F 1 "4k7" V 5184 2000 50  0000 C CNN
+F 0 "R2" V 5450 1900 50  0000 C CNN
+F 1 "4k7" V 5450 2100 50  0000 C CNN
 F 2 "Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5230 2000 50  0001 C CNN
 F 3 "~" H 5300 2000 50  0001 C CNN
 	1    5300 2000
@@ -734,18 +728,16 @@ F 3 "~" H 5300 2000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5450 2000 5600 2000
-Wire Wire Line
-	5600 2000 5600 1850
 $Comp
 L power:+5V #PWR0220
 U 1 1 6175F87F
-P 5600 1850
-F 0 "#PWR0220" H 5600 1700 50  0001 C CNN
-F 1 "+5V" H 5615 2023 50  0000 C CNN
-F 2 "" H 5600 1850 50  0001 C CNN
-F 3 "" H 5600 1850 50  0001 C CNN
-	1    5600 1850
-	1    0    0    -1  
+P 5600 2000
+F 0 "#PWR0220" H 5600 1850 50  0001 C CNN
+F 1 "+5V" H 5615 2173 50  0000 C CNN
+F 2 "" H 5600 2000 50  0001 C CNN
+F 3 "" H 5600 2000 50  0001 C CNN
+	1    5600 2000
+	0    1    1    0   
 $EndComp
 Text Label 4700 2000 0    50   ~ 0
 PSW1
@@ -757,17 +749,6 @@ Wire Wire Line
 	2700 5200 2150 5200
 Wire Wire Line
 	4600 2300 5950 2300
-$Comp
-L Connector:Conn_01x04_Male J10
-U 1 1 61784020
-P 5950 1150
-F 0 "J10" V 6012 1294 50  0000 L CNN
-F 1 "Conn_01x04_Male" V 6103 1294 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04_Pitch2.54mm" H 5950 1150 50  0001 C CNN
-F 3 "~" H 5950 1150 50  0001 C CNN
-	1    5950 1150
-	0    1    1    0   
-$EndComp
 $Comp
 L power:+5V #PWR0221
 U 1 1 6178ADDE
@@ -802,4 +783,29 @@ Wire Wire Line
 	4600 2100 6050 2100
 Wire Wire Line
 	5950 1350 5950 2300
+Wire Wire Line
+	6700 2400 6700 1850
+Wire Wire Line
+	6700 1850 6900 1850
+Wire Wire Line
+	4600 2400 6700 2400
+$Comp
+L Connector:Conn_01x06_Male J10
+U 1 1 61867758
+P 5950 1150
+F 0 "J10" V 6012 762 50  0000 R CNN
+F 1 "Conn_01x06_Male" V 6103 762 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm" H 5950 1150 50  0001 C CNN
+F 3 "~" H 5950 1150 50  0001 C CNN
+	1    5950 1150
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	4600 1800 6150 1800
+Wire Wire Line
+	6150 1800 6150 1350
+Wire Wire Line
+	6250 1900 6250 1350
+Wire Wire Line
+	4600 1900 6250 1900
 $EndSCHEMATC
