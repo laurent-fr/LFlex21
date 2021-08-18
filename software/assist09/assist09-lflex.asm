@@ -24,6 +24,15 @@ DFTCHP  EQU     0               ; DEFAULT CHARACTER PAD COUNT
 DFTNLP  EQU     5               ; DEFAULT NEW LINE PAD COUNT
 PROMPT  EQU     '>              ; PROMPT CHARACTER
 NUMBKP  EQU     8               ; NUMBER OF BREAKPOINTS
+
+PIA     EQU $E810               ; PIA addresses
+PRA     EQU PIA
+DDRA    EQU PIA 
+CRA     EQU PIA+1
+PRB     EQU PIA+2
+DDRB    EQU PIA+2
+CRB     EQU PIA+3
+
 *********************************************
 
 *********************************************
@@ -44,6 +53,9 @@ PTMTM1  EQU     PTM+2           ; LATCH 1
 PTMTM2  EQU     PTM+4           ; LATCH 2
 PTMTM3  EQU     PTM+6           ; LATCH 3
 SKIP2   EQU     $8C             ; "CMPX #" OPCODE - SKIPS TWO BYTES
+
+* PIA
+
 
 *******************************************
 * ASSIST09 MONITOR SWI FUNCTIONS
@@ -218,6 +230,19 @@ BLDRTN  PULS    PC,B            ; RETURN TO INITIALIZER
 *******************************************************
 RESET   LEAS    STACK,PCR       ; SETUP INITIAL STACK
         BSR     BLDVTR          ; BUILD VECTOR TABLE
+    
+        ; init PIA
+        CLRA         ; init PIA, select DDR 
+        STA CRA 
+        STA CRB 
+        LDA #$0F        ; PORTA0..3 = output
+        STA DDRA 
+        LDA #$FF        ; PORT B = output 
+        STA DDRB 
+        LDA #%00110100  ; select PRA/PRB 
+        LDA PRA 
+        LDA PRB 
+
 RESET2  CLRA                    ; ISSUE STARTUP MESSAGE
         TFR     A,DP            ; DEFAULT TO PAGE ZERO
         SWI                     ; PERFORM MONITOR FIREUP
@@ -358,6 +383,8 @@ ZMONT2  LDX     <VECTAB+.PTM    ; LOAD PTM ADDRESS
         STB     PTMC13-PTM,X    ; SET OUTPUT ENABLED/
 * SINGLE SHOT/ DUAL 8 BIT/INTERNAL MODE/OPERATE
         ;CLR     PTMC2-PTM,X     ; SET CR2 BACK TO RESET FORM
+
+
 * FALL INTO COMMAND PROCESSOR
 
 ***************************************************
@@ -851,6 +878,11 @@ COON
        STA      ,X              ; STORE INTO STATUS REGISTER
        LDA      #$15            ; SET CONTROL
        STA      ,X              ; REGISTER UP
+
+       LDX      #10000          ; small pause before using ACIA
+COON2  LEAX     -1,X
+       BNE      COON2
+
 RTS    RTS                      ; RETURN TO CALLER
 
 * THE FOLLOWING HAVE NO DUTIES TO PERFORM
@@ -1747,11 +1779,6 @@ DRQ     EQU 2       ; DRQ BIT MASK
 BUSY    EQU 1       ; BUSY MASK
 RDMSK   EQU $1C     ; READ ERROR MASK
 
-PIA     EQU $E810   ; PIA
-PRA     EQU PIA
-DDRA    EQU PIA
-CRA     EQU PIA+1
-
 COMREG  EQU $E818   ; COMMMAND REGISTER
 TRKREG  EQU $E819   ; TRACK REGISTER
 SECREG  EQU $E81A   ; SECTOR REGISTER
@@ -1767,8 +1794,8 @@ RSCMND  EQU $08     ; RESTORE COMMAND
 
 XINIT   CLRA            ; select PIA control register
         STA CRA
-        COMA            ; A<-FF
-        STA DDRA        ; all output
+        LDA #$0F        ; PORTA b0..b3 = output
+        STA DDRA        
         LDA #%00111100  ; select PIA output register
         STA CRA
         LDA #%00001001  ; b3=1 (FM)
